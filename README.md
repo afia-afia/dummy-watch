@@ -1,2 +1,2 @@
 # dummy-watch
-simple demostration of subject/observer design pattern
+simple demonstration of subject/observer design pattern
