@@ -12,7 +12,7 @@ public class Main {
 	public static void main( String[] args )
     {
 		TimeServiceImplWithDeleg timeService = new TimeServiceImplWithDeleg();
-        Clock listner =  new Clock(timeService);
+        Clock listner =  new Clock(timeService);//
         EventQueue.invokeLater(new Runnable() {
 			public void run() {
 		     	

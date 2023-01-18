@@ -8,9 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>afia.nabil</groupId>
-  <artifactId>gui</artifactId>
+  <artifactId>core-lookup</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>gui</name>
+  <name>core-lookup</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,26 +22,5 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-        <dependency>
-    	<groupId>afia.nabil</groupId>
-		  <artifactId>time-service</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-		<groupId>afia.nabil</groupId>
-  <artifactId>timer-service-impl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-	</dependency>
-	<dependency>
-		  <groupId>afia.nabil</groupId>
-  <artifactId>TimeServiceWithDelegation</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-	</dependency>
-
-	<dependency>
-		<groupId>afia.nabil</groupId>
-		<artifactId>ConfigState</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
   </dependencies>
 </project>

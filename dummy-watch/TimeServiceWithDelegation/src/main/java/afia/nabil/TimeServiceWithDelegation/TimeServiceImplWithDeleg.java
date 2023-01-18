@@ -8,7 +8,7 @@ import java.util.TimerTask;
 import afia.nabil.time.service.Listner;
 import afia.nabil.time.service.TimeService;
 import afia.nabil.time.service.TimeServiceProvider;
-import afia.nabil.timer.service.impl.TimeServiceImpl;
+
 
 public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 	private PropertyChangeSupport psc  =new PropertyChangeSupport(this) ;
@@ -28,7 +28,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 	@Override
 	public void uRegisterListner(Listner l) {
 		// TODO Auto-generated method stub
-		psc.addPropertyChangeListener(l);
+		psc.removePropertyChangeListener(l);;
 	}
 	
 	@Override
