@@ -11,8 +11,8 @@ import afia.nabil.timer.service.impl.TimeServiceImpl;
 public class Main {
 	public static void main( String[] args )
     {
-		TimeServiceImplWithDeleg timeService = new TimeServiceImplWithDeleg();
-        Clock listner =  new Clock(timeService);
+		TimeService timeService = new TimeServiceImplWithDeleg();
+        Clock listner =  new Clock();
         EventQueue.invokeLater(new Runnable() {
 			public void run() {
 		     	

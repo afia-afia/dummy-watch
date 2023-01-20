@@ -1,20 +1,16 @@
 package afia.nabil.gui;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Panel;
 import java.beans.PropertyChangeEvent;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
-import afia.nabil.TimeServiceWithDelegation.TimeServiceImplWithDeleg;
-import afia.nabil.time.service.Listner;
-import afia.nabil.time.service.TimeService;
-import afia.nabil.timer.service.impl.TimeServiceImpl;
+import afia.nabil.core.lookup.Lookup;
+
+import afia.nabil.time.service.*;
 public class Clock implements Listner {
 	private int  hour;
 	private int minute;
@@ -25,9 +21,9 @@ public class Clock implements Listner {
 	JButton button = new JButton("mode");
 	JButton plusButton = new JButton("plus");
 	JButton minusButton = new JButton("minus");
-	public Clock(TimeServiceImplWithDeleg e) {
+	public Clock() {
 		// TODO Auto-generated constructor stub
-		timeService = e;
+		timeService  = Lookup.getInstance().getService(TimeService.class);
 		timeService.registerListner(this);
 		hour = timeService.getHour();
 		minute = timeService.getMinute();

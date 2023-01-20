@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import afia.nabil.core.lookup.Lookup;
 import afia.nabil.time.service.Listner;
 import afia.nabil.time.service.TimeService;
 import afia.nabil.time.service.TimeServiceProvider;
@@ -22,6 +23,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 		seconde = localTime.getSecond();
 		minute = localTime.getMinute();
 		hour = localTime.getHour();
+		Lookup.getInstance().register(TimeService.class, this);
 		timer.scheduleAtFixedRate(this, 0, 1000);
 	}
 	

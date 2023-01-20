@@ -1,11 +1,14 @@
 package afia.nabil.timer.service.impl;
 
+
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import afia.nabil.core.lookup.Lookup;
 import afia.nabil.time.service.Listner;
 import afia.nabil.time.service.TimeService;
 
@@ -23,7 +26,7 @@ public class TimeServiceImpl extends TimerTask implements TimeService {
 		minute = localTime.getMinute();
 		hour = localTime.getHour();
 		timer.scheduleAtFixedRate(this, 0, 1000);
-		
+		Lookup.getInstance().register(TimeService.class,this);
 	}
 
 	@Override
