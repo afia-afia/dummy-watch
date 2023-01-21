@@ -30,7 +30,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 	@Override
 	public void uRegisterListner(Listner l) {
 		// TODO Auto-generated method stub
-		psc.addPropertyChangeListener(l);
+		psc.removePropertyChangeListener(l);;
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 	public void run() {
 		// TODO Auto-generated method stub
 		updateSeconde();
-		System.out.println("minute :" + minute + " seconde :" + seconde);
+	//System.out.println("minute :" + minute + " seconde :" + seconde);
 	}
 	@Override
 	public void updateSeconde() {
@@ -50,7 +50,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 		
 		int oldVal = seconde;
 		seconde = (oldVal+1)%60;
-		psc.firePropertyChange(Listner.SECONDE_PROP, oldVal,seconde);
+		psc.firePropertyChange(Listner.SECONDE_PROP, oldVal,1);
 		if(seconde == 0 )
 			updateMinute();
 	}
@@ -60,7 +60,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 		int oldVal = minute;
 		 minute = (minute+1)%60;
 		
-		psc.firePropertyChange(Listner.MINUTE_PROP, oldVal, minute);
+		psc.firePropertyChange(Listner.MINUTE_PROP, oldVal, 1);
 		if(minute == 0)
 			updateHour();
 	}
@@ -68,7 +68,7 @@ public class TimeServiceImplWithDeleg extends TimerTask implements TimeService{
 	public void updateHour() {
 		int oldVal = hour;
 		 hour = (hour+1)%24;
-		psc.firePropertyChange(Listner.HEURE_PROP, oldVal,hour);
+		psc.firePropertyChange(Listner.HEURE_PROP, oldVal,1);
 	}
 
 	@Override

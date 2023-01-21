@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import afia.nabil.core.lookup.Lookup;
-
 import afia.nabil.time.service.*;
 public class Clock implements Listner {
 	private int  hour;
